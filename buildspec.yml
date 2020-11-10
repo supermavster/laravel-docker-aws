@@ -55,8 +55,7 @@ phases:
     - echo ADD User Docker
     # - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
-    - sudo service docker start
-
+    # - sudo service docker start
 
     - echo Docker versions
     - docker-compose --version

@@ -28,11 +28,14 @@ phases:
     - sudo adduser $(whoami) sudo
     - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
+    - sudo usermod -aG docker $USER
 
     - echo Update Config
     - sudo apt update -y && sudo apt upgrade -y
     - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    - sudo systemctl enable docker
     - sudo service docker restart
+    - docker -v
 
     - echo Building the Docker image
     - docker-compose build

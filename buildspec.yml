@@ -21,6 +21,8 @@ phases:
     - cp source/.env.example source/.env
     
     - echo Building the Docker image
+    - sudo groupadd docker
+    - sudo usermod -aG docker $(whoami)
     - docker-compose build
     
     - echo Install Components

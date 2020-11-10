@@ -52,12 +52,11 @@ phases:
     - echo Building the Docker image
     - apt-cache policy docker-ce
     - sudo apt install docker-ce -y
-    - sudo systemctl status docker
-    - sudo systemctl start docker
 
     - echo ADD User Docker
     - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
+    - sudo /etc/init.d/docker start
 
     - echo Build
     - start docker

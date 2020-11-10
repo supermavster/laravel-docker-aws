@@ -30,11 +30,8 @@ phases:
     - sudo usermod -aG docker $(whoami)
 
     - echo Update Config
-    - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-    - sudo systemctl unmask docker
-    - sudo systemctl enable docker
-    - sudo systemctl start docker
-    - sudo service docker restart
+    - sudo service docker start
+    - sudo service docker status
     - docker -v
 
     - echo Building the Docker image

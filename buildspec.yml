@@ -21,13 +21,16 @@ phases:
     - cp source/.env.example source/.env
     
     - echo Update Config
-    - sudo apt update -y && sudo apt upgrade -y
+    - apt update -y && apt upgrade -y
 
     - echo ADD Config
     - apt-get install sudo -y
     - sudo adduser $(whoami) sudo
     - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
+
+    - echo Update Config
+    - sudo apt update -y && sudo apt upgrade -y
 
     - echo Building the Docker image
     - docker-compose build

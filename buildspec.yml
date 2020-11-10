@@ -33,7 +33,9 @@ phases:
     - echo Update Config
     - sudo apt update -y && sudo apt upgrade -y
     - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    - sudo systemctl unmask docker
     - sudo systemctl enable docker
+    - sudo systemctl start docker
     - sudo service docker restart
     - docker -v
 

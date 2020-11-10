@@ -29,6 +29,7 @@ phases:
 
     - echo Upgrade Info
     - sudo apt update -y && sudo apt upgrade -y
+    - sudo apt-get install systemd -y
 
     - echo Update Config
     - sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y

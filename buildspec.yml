@@ -60,6 +60,8 @@ phases:
     - echo Docker versions
     - docker-compose --version
     - docker -v
+    - sudo /sbin/service docker status
+    - sudo chown $(whoami):docker /var/run/docker.sock
 
     - echo Build
     - docker-compose build

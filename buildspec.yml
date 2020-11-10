@@ -61,6 +61,9 @@ phases:
     - docker-compose --version
     - docker -v
     - sudo service docker status
+    - sudo service docker stop
+    - sudo rm -rf /var/lib/docker
+    - sudo service docker start
     - sudo chown $(whoami):docker /var/run/docker.sock
 
     - echo Build

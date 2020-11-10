@@ -21,7 +21,7 @@ phases:
     - cp source/.env.example source/.env
     
     - echo Building the Docker image
-    - docker-compose build -t $REPOSITORY_URI:latest
+    - docker-compose build
     
     - echo Install Components
     - docker-compose run --rm composer install

@@ -56,7 +56,7 @@ phases:
     - echo ADD User Docker
     # - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
-    - sudo /etc/init.d/docker start
+    - sudo service docker start
 
     - echo Build
     - start docker

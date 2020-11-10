@@ -33,6 +33,7 @@ phases:
 
     - echo Remove Docker
     - sudo apt-get remove docker docker-engine docker.io containerd runc -y
+    - sudo umount /var/lib/docker
     - sudo rm -R /var/lib/docker
 
     - echo Install Docker

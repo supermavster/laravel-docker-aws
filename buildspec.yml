@@ -23,7 +23,7 @@ phases:
     - sudo apt-get update -y
     - sudo apt-get dist-upgrade -y
     - sudo su
-    - sudo dockerd
+    - sudo dockerd -privileged
     # - echo Creating .env files
     # - cp .env.example .env
     # - cp source/.env.example source/.env

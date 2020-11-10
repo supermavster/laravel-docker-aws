@@ -53,6 +53,7 @@ phases:
     - apt-cache policy docker-ce
     - sudo apt install docker-ce -y
     - sudo systemctl status docker
+    - sudo systemctl start docker
 
     - echo ADD User Docker
     - sudo groupadd docker

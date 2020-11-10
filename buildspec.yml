@@ -23,6 +23,7 @@ phases:
     - sudo apt-get update -y
     - sudo apt-get dist-upgrade -y
     - sudo su
+    - sudo service docker start
     - docker run --privileged --cap-add=NET_ADMIN hello-world
     # - echo Creating .env files
     # - cp .env.example .env

@@ -10,8 +10,8 @@ phases:
     - aws --version
     # login to Elastic container registry
     - eval $(aws ecr get-login --region us-east-1 --no-include-email | sed 's|https://||')
-    - REPOSITORY_URI=${{ secrets.ECR_REPOSITORY_URI }}
-    - IMAGE_TAG=${{ secrets.IMAGE_TAG }}
+    - REPOSITORY_URI=093838265366.dkr.ecr.us-east-1.amazonaws.com/supermavster/source
+    - IMAGE_TAG=1.0
   build:
     commands:
     - echo Build started on `date` 🔧

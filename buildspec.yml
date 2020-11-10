@@ -15,7 +15,12 @@ phases:
   build:
     commands:
     - echo Build started on `date` 🔧
-    - dockerd
+
+    - echo ADD Config
+    - apt-get install sudo -y
+    - sudo adduser $(whoami) sudo
+
+    - sudo dockerd
     # - echo Creating .env files
     # - cp .env.example .env
     # - cp source/.env.example source/.env
@@ -23,9 +28,6 @@ phases:
     # - echo Update Config
     # - apt update -y && apt upgrade -y
 
-    # - echo ADD Config
-    # - apt-get install sudo -y
-    # - sudo adduser $(whoami) sudo
 
     # - echo Upgrade Info
     # - sudo apt update -y && sudo apt upgrade -y

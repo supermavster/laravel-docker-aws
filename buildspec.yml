@@ -57,7 +57,8 @@ phases:
     - sudo usermod -aG docker $(whoami)
     # - sudo service docker status
     # - sudo ps -ef | grep docker
-    - docker -d
+    - docker -D
+    - docker run hello-world
     - service docker start
     # - sudo service docker start
     # - sudo service docker stop

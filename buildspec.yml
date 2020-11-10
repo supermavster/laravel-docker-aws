@@ -55,17 +55,17 @@ phases:
 
     - echo Building the Docker image
     - sudo dockerd
-    - docker-compose build
+    - sudo docker-compose build
     
     - echo Install Components
-    - docker-compose run --rm composer install
-    - docker-compose run --rm npm install
+    - sudo docker-compose run --rm composer install
+    - sudo docker-compose run --rm npm install
 
     - echo Generating app key
-    - docker-compose run --rm artisan key:generate
+    - sudo docker-compose run --rm artisan key:generate
   post_build:
     commands:
       - echo Build completed on `date`  🚀
       - echo Pushing the Docker image
-      - docker image ls -a
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - sudo docker image ls -a
+      - sudo docker push $REPOSITORY_URI:$IMAGE_TAG

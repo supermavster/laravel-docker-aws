@@ -56,9 +56,9 @@ phases:
     # - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
     # - sudo service docker status
-    - sudo service docker start
+    - sudo ps -ef | grep docker
+    # - sudo service docker start
     # - sudo service docker stop
-    # - sudo ps -ef | grep docker
     # - sudo umount /var/lib/docker/containers
     # - sudo rm -rf /var/lib/docker
     # - sudo chown $(whoami):docker /var/run/docker.sock

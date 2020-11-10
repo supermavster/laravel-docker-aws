@@ -50,7 +50,7 @@ phases:
 
     - echo Building the Docker image
     - apt-cache policy docker-ce
-    - sudo apt install docker-ce
+    - sudo apt install docker-ce -y
     - sudo systemctl status docker
 
     - echo ADD User Docker

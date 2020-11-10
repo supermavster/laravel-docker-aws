@@ -20,7 +20,8 @@ phases:
     - apt update
     - apt-get install sudo -y
     - sudo adduser $(whoami) sudo
-
+    - sudo apt-get update
+    - sudo apt-get dist-upgrade
     - sudo dockerd
     # - echo Creating .env files
     # - cp .env.example .env

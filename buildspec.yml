@@ -48,6 +48,7 @@ phases:
     - docker -v
 
     - echo Building the Docker image
+    - sudo dockerd
     - docker-compose build
     
     - echo Install Components

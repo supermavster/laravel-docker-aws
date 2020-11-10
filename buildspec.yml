@@ -46,8 +46,6 @@ phases:
     
     - echo Docker
     - docker -v
-    - sudo service docker start
-    - sudo service docker status
 
     - echo Building the Docker image
     - docker-compose build

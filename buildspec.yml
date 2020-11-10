@@ -15,70 +15,70 @@ phases:
   build:
     commands:
     - echo Build started on `date` 🔧
+    - dockerd
+    # - echo Creating .env files
+    # - cp .env.example .env
+    # - cp source/.env.example source/.env
     
-    - echo Creating .env files
-    - cp .env.example .env
-    - cp source/.env.example source/.env
+    # - echo Update Config
+    # - apt update -y && apt upgrade -y
+
+    # - echo ADD Config
+    # - apt-get install sudo -y
+    # - sudo adduser $(whoami) sudo
+
+    # - echo Upgrade Info
+    # - sudo apt update -y && sudo apt upgrade -y
+    # - sudo apt-get install systemd -y
+
+    # - echo Remove Docker
+    # - sudo apt-get remove docker docker-engine docker.io containerd runc -y
+
+    # - echo Install Docker
+    # - sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+    # - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    # - sudo apt-key fingerprint 0EBFCD88
+    # - sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    # - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    # - sudo apt-key fingerprint 0EBFCD88
+    # - sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+    # - echo Building the Docker image
+    # - apt-cache policy docker-ce
+    # - sudo apt-get install docker-ce=5:19.03.13~3-0~ubuntu-bionic docker-ce-cli=5:19.03.13~3-0~ubuntu-bionic containerd.io -y
     
-    - echo Update Config
-    - apt update -y && apt upgrade -y
+    # - echo Install Docker Composer
+    # - sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    # - sudo chmod +x /usr/local/bin/docker-compose
+    # - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-    - echo ADD Config
-    - apt-get install sudo -y
-    - sudo adduser $(whoami) sudo
+    # - echo ADD User Docker
+    # # - sudo groupadd docker
+    # - sudo usermod -aG docker $(whoami)
+    # # - sudo service docker status
+    # # - sudo ps -ef | grep docker
+    # - docker -D
+    # - docker run hello-world
+    # - service docker start
+    # # - sudo service docker start
+    # # - sudo service docker stop
+    # # - sudo umount /var/lib/docker/containers
+    # # - sudo rm -rf /var/lib/docker
+    # # - sudo chown $(whoami):docker /var/run/docker.sock
 
-    - echo Upgrade Info
-    - sudo apt update -y && sudo apt upgrade -y
-    - sudo apt-get install systemd -y
+    # - echo Docker versions
+    # - docker-compose --version
+    # - docker -v
 
-    - echo Remove Docker
-    - sudo apt-get remove docker docker-engine docker.io containerd runc -y
-
-    - echo Install Docker
-    - sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
-    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    - sudo apt-key fingerprint 0EBFCD88
-    - sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    - sudo apt-key fingerprint 0EBFCD88
-    - sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-    - echo Building the Docker image
-    - apt-cache policy docker-ce
-    - sudo apt-get install docker-ce=5:19.03.13~3-0~ubuntu-bionic docker-ce-cli=5:19.03.13~3-0~ubuntu-bionic containerd.io -y
+    # - echo Build
+    # - docker-compose build
     
-    - echo Install Docker Composer
-    - sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
-    - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    # - echo Install Components
+    # - sudo docker-compose run --rm composer install
+    # - sudo docker-compose run --rm npm install
 
-    - echo ADD User Docker
-    # - sudo groupadd docker
-    - sudo usermod -aG docker $(whoami)
-    # - sudo service docker status
-    # - sudo ps -ef | grep docker
-    - docker -D
-    - docker run hello-world
-    - service docker start
-    # - sudo service docker start
-    # - sudo service docker stop
-    # - sudo umount /var/lib/docker/containers
-    # - sudo rm -rf /var/lib/docker
-    # - sudo chown $(whoami):docker /var/run/docker.sock
-
-    - echo Docker versions
-    - docker-compose --version
-    - docker -v
-
-    - echo Build
-    - docker-compose build
-    
-    - echo Install Components
-    - sudo docker-compose run --rm composer install
-    - sudo docker-compose run --rm npm install
-
-    - echo Generating app key
-    - sudo docker-compose run --rm artisan key:generate
+    # - echo Generating app key
+    # - sudo docker-compose run --rm artisan key:generate
   post_build:
     commands:
       - echo Build completed on `date`  🚀

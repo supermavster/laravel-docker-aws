@@ -20,6 +20,9 @@ phases:
     - cp .env.example .env
     - cp source/.env.example source/.env
     
+    - echo Update Config
+    - sudo apt update -y && sudo apt upgrade -y
+
     - echo ADD Config
     - apt-get install sudo -y
     - sudo adduser $(whoami) sudo

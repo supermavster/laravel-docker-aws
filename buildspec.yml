@@ -53,7 +53,9 @@ phases:
     - docker -v
 
     - echo Building the Docker image
-    - sudo service docker start && docker-compose build
+    - start docker
+    - sudo service --status-all 
+    - docker-compose build
     
     - echo Install Components
     - sudo docker-compose run --rm composer install

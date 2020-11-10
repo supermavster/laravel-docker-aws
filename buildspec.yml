@@ -54,7 +54,7 @@ phases:
     - sudo apt install docker-ce -y
 
     - echo ADD User Docker
-    - sudo groupadd docker
+    # - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
     - sudo /etc/init.d/docker start
 

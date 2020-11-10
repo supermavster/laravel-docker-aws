@@ -20,9 +20,13 @@ phases:
     - cp .env.example .env
     - cp source/.env.example source/.env
     
-    - echo Building the Docker image
+    - echo ADD Config
+    - apt-get install sudo -y
+    - sudo adduser $(whoami) sudo
     - sudo groupadd docker
     - sudo usermod -aG docker $(whoami)
+
+    - echo Building the Docker image
     - docker-compose build
     
     - echo Install Components

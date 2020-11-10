@@ -51,9 +51,10 @@ phases:
     
     - echo Docker
     - docker -v
+    - sudo chmod 666 /var/run/docker.sock
 
     - echo Building the Docker image
-    - sudo docker-compose build
+    - sudo service docker start && docker-compose build
     
     - echo Install Components
     - sudo docker-compose run --rm composer install

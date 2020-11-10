@@ -30,10 +30,6 @@ phases:
     - echo Upgrade Info
     - sudo apt update -y && sudo apt upgrade -y
 
-    - echo ADD User Docker
-    - sudo groupadd docker
-    - sudo usermod -aG docker $(whoami)
-
     - echo Update Config
     - sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -53,6 +49,15 @@ phases:
     - docker -v
 
     - echo Building the Docker image
+    - apt-cache policy docker-ce
+    - sudo apt install docker-ce
+    - sudo systemctl status docker
+
+    - echo ADD User Docker
+    - sudo groupadd docker
+    - sudo usermod -aG docker $(whoami)
+
+    - echo Build
     - start docker
     - sudo service --status-all 
     - docker-compose build
